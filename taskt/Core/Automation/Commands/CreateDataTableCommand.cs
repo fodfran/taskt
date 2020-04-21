@@ -55,6 +55,10 @@ namespace taskt.Core.Automation.Commands
         {
             var engine = (Core.Automation.Engine.AutomationEngineInstance)sender;
             var dataTableName = v_DataTableName.ConvertToUserVariable(sender);
+            if (dataTableName == "")
+            {
+                dataTableName = v_DataTableName;
+            }
 
             DataTable Dt = new DataTable();
 
