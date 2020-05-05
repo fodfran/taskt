@@ -139,11 +139,6 @@ namespace taskt.Core.Automation.Commands
                 default:
                     throw new NotImplementedException("Property Type '" + propertyName + "' not implemented");
             }
-
-
-
-
-
         }
 
         public AutomationElement SearchForGUIElement(object sender, string variableWindowName)
@@ -174,9 +169,6 @@ namespace taskt.Core.Automation.Commands
                     propCondition = CreatePropertyCondition(parameterName, parameterValue);
                 }
 
-
-
-               
                 conditionList.Add(propCondition);
             }
 

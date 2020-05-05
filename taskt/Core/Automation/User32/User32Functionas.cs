@@ -552,8 +552,13 @@ namespace taskt.Core.Automation.User32
                             UnhookWindowsHookEx(_mouseHookID);
                         }
 
-                        MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
-                        System.Windows.Point point = new System.Windows.Point(hookStruct.pt.x, hookStruct.pt.y);
+                        //MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
+                        //System.Windows.Point point = new System.Windows.Point(hookStruct.pt.x, hookStruct.pt.y);
+
+                        //var x = Cursor.Position.X;
+                        //var y = Cursor.Position.Y;
+                        System.Windows.Point point = new System.Windows.Point(Cursor.Position.X, Cursor.Position.Y);
+
                         MouseEvent?.Invoke(null, new MouseCoordinateEventArgs() { MouseCoordinates = point });
                     }
 
